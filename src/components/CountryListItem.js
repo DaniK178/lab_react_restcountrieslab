@@ -1,7 +1,9 @@
-const CountryListItem = () => {
+const CountryListItem = ({country},{onClick}) => {
     return (
-        <li>One CountryListItem!</li>
+    
+        <li>{country.name.common}-{country.flag} - <button onClick={onClick}> Add to visited list </button> </li>
     );
 }
 
 export default CountryListItem;
+//this should display the induvidual countries 

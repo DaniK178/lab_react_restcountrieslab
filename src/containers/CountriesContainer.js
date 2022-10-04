@@ -8,10 +8,13 @@ const CountriesContainer = () => {
     const [countries, setCountries] = useState([]);
 
     const fetchCountries = () => {
-        console.log("Getting some country data");
-        // fetch data from the RESTCountries API
+        //console.log("Getting some country data");
+        // fetch data from the RESTCountries 
+        fetch ("https://restcountries.com/v3.1/all")
         // set the countries state to the result of the API call
+        .then((response) => response.json())
         // pass it down to relevant components
+        .then((response) =>setCountries(response));
     }
 
     useEffect(() => {
@@ -20,13 +23,23 @@ const CountriesContainer = () => {
         // it need to fetch data, and load data, using the josn in the example
     }, [])
 
+    const [vistedCountries, setVistedCountries] = useState ([]);
+
+    const visitCountry = () => {
+        
+
+
+
+
+    }
+
 
     return(
         <>
             <h1>I'm a country container!</h1>
             {/* i can remove this header */}
-            <CountriesList />
-            <VisitedCountriesList/>
+            <CountriesList countries={countries} />
+            <VisitedCountriesList vistedCountries = {visitCountry}/>
         </>
     );
 }

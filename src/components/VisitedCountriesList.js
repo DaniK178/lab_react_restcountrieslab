@@ -1,19 +1,29 @@
-import CountryListItem from "./CountryListItem";
+// import CountriesList from "./CountriesList";
+ import CountryListItem from "./CountryListItem";
 
-const VisitedCountriesList = (vistedCountries) => {
-    // const vistedCountriesListItems = countries.map((country, index)=> {
-    //     return <CountryListItem country={country} key = {index}/>
-    //}
 
-    return(
-        <>
-            <h2>All the countries I've visited!</h2>
+
+const VisitedCountriesList = ({addVisitedCountry},{countries}) => {
+
+//     const visitedCountriesListItems = countries.map((country, index)=> {
+
+//         <button onClick={addVisitedCountry}> Add to visited list </button>
+//        return <CountryListItem onClick = {country} key = {index}/>
+
+//     //    <button onclick = {handlevisitedCountries(country)} >Get visitedCountriesList </button>
+    
+        //  }
+//     )
+
+     return (
+         <>
+//             <h2>All the countries I've visited!</h2>
             
-            {CountryListItem}
+            {/* {visitedCountriesListItems} */}
 
            
-        </>
-    );
-}
+         </>
+ );
+ }
 
 export default VisitedCountriesList;

@@ -23,14 +23,12 @@ const CountriesContainer = () => {
         // it need to fetch data, and load data, using the josn in the example
     }, [])
 
-    const [vistedCountries, setVistedCountries] = useState ([]);
+    const [visitedCountries, setVistedCountries] = useState ([]);
 
-    const visitCountry = () => {
+    const addVisitedCountry = (newCountry) => {
+        const newVisitedList = [...visitedCountries, newCountry]
+         setVistedCountries(newVisitedList)
         
-
-
-
-
     }
 
 
@@ -38,8 +36,15 @@ const CountriesContainer = () => {
         <>
             <h1>I'm a country container!</h1>
             {/* i can remove this header */}
-            <CountriesList countries={countries} />
-            <VisitedCountriesList vistedCountries = {visitCountry}/>
+            <CountriesList 
+            countries={countries} 
+            visitedCountriesList = {VisitedCountriesList}
+            handlevisitedCountries={addVisitedCountry}/>
+            
+            <VisitedCountriesList 
+            // addVisitedCountry = {addVisitedCountry} 
+            // countries = {countries}
+            /> 
         </>
     );
 }

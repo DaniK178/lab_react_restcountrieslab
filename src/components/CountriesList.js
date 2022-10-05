@@ -1,6 +1,11 @@
 import CountryListItem from "./CountryListItem";
+import VisitedCountriesList from "./VisitedCountriesList";
 
-const CountriesList = ({countries}) => {
+// const CountriesList = ({countries},{visitedCountriesList},{handlevisitedCountries})
+
+const CountriesList = ({countries}) =>{
+    // const VisitedCountriesList = visitedCountriesList
+    // const handlevisitedCountries = handlevisitedCountries
 
     //it is the {} that does the destructuring
     const countryListItems = countries.map((country, index)=> {
@@ -10,7 +15,9 @@ const CountriesList = ({countries}) => {
         <>
         <h2>CountriesList here!</h2>
         
+        
         {countryListItems}
+        {/* <VisitedCountriesList/> */}
 
             
         </>

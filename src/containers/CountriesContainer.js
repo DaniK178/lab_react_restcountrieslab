@@ -23,27 +23,36 @@ const CountriesContainer = () => {
         // it need to fetch data, and load data, using the josn in the example
     }, [])
 
+    //const addCountry = () => addVisitedCountry(selectedCountry)
+
+    const [selectedCountry, setSelectedCountry] = useState(null)
+
+    const selectCountry = (country) => {
+        setSelectedCountry(country);
+    }
+
     const [visitedCountries, setVistedCountries] = useState ([]);
 
-    const addVisitedCountry = (newCountry) => {
-        const newVisitedList = [...visitedCountries, newCountry]
-         setVistedCountries(newVisitedList)
-        
+    const addVisitedCountry = (country) => {
+        const newVisitedList = [...visitedCountries, country];
+         setVistedCountries(newVisitedList);   
     }
 
 
     return(
         <>
             <h1>I'm a country container!</h1>
-            {/* i can remove this header */}
+          
             <CountriesList 
             countries={countries} 
-            visitedCountriesList = {VisitedCountriesList}
-            handlevisitedCountries={addVisitedCountry}/>
+           selectedCountry = {selectedCountry}
+           addVisitedCountry={addVisitedCountry}
+           />
+            
             
             <VisitedCountriesList 
-            // addVisitedCountry = {addVisitedCountry} 
-            // countries = {countries}
+            visitedCountries = {visitedCountries}
+            selectCountry = {selectCountry}
             /> 
         </>
     );
